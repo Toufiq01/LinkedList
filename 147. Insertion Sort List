@@ -13,17 +13,19 @@ class Solution {
         ListNode dummy = new ListNode();
         ListNode prev = dummy;
         ListNode curr = head;
-        ListNode next;
+        ListNode temp;
         while (curr != null){
-            next = curr.next;
+            temp = curr.next;
             while(prev.next !=null && prev.next.val < curr.val){
                 prev = prev.next;
             }
             curr.next = prev.next;
             prev.next = curr;
             prev = dummy;
-            curr = next;
+            curr = temp;
         }
         return dummy.next;
     }
 }
+// Runtime: 31 ms, faster than 20.61% of Java online submissions for Insertion Sort List.
+// Memory Usage: 38.5 MB, less than 82.47% of Java online submissions for Insertion Sort List.
