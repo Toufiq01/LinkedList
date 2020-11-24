@@ -10,7 +10,7 @@
  */
 class Solution {
     public ListNode removeElements(ListNode head, int val) {
-        ListNode fakeHead = new ListNode(0);
+        ListNode fakeHead = new ListNode(0); // without using this 0, Runtime: 1 ms, faster than 74.05% of Java online submission Memory Usage: 39.9 MB, less than 48.46% of Java online submissions for Remove Linked List Elements.
         fakeHead.next = head;
         ListNode curr = fakeHead;
         while(curr.next != null){
