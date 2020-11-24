@@ -19,7 +19,7 @@ class Solution {
                 curr =curr.next;
             } else {
                 int dublicate = curr.next.val;
-                while(curr.next !=null && curr.next.val == dublicate){
+                while(curr.next !=null && curr.next.val == dublicate){  // corner case [1,1]
                     curr.next = curr.next.next;
                 }
             }
