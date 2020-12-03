@@ -1,0 +1,12 @@
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head, fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+//Runtime: 0 ms, faster than 100.00% of Java online submissions for Middle of the Linked List.
+//Memory Usage: 36.1 MB, less than 72.02% of Java online submissions for Middle of the Linked List.
