@@ -11,8 +11,7 @@
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
         ListNode curr = head;
-        while(curr != null){
-            if(curr.next == null) break; //with out this runtime error
+        while(curr != null && curr.next != null){  //with out this runtime error
             if(curr.val == curr.next.val){
                 curr.next = curr.next.next;
             } else curr = curr.next;
