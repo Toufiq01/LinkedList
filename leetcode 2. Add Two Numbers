@@ -20,20 +20,16 @@ class Solution {
             else m2 = l2.val;
             int add = m1+m2+ carry;
             carry= add>9? 1:0;
-            ListNode temp = new ListNode(0); 
-            temp.val = add%10;
-            sum.next = temp;
+            sum.next = new ListNode(add%10);
             sum = sum.next;
             if(l1 != null) l1 = l1.next;
             if(l2 != null) l2 = l2.next;
         }
-        if(carry == 1){
-            ListNode temp = new ListNode(0);
-            temp.val = carry;
-            sum.next = temp;
-        }
+        if(carry == 1) sum.next = new ListNode(carry);
         return result.next;
     }
 }
 // Runtime: 2 ms, faster than 80.00% of Java online submissions for Add Two Numbers.
 // Memory Usage: 39.1 MB, less than 86.78% of Java online submissions for Add Two Numbers.
+// Runtime: 1 ms, faster than 100.00% of Java online submissions for Add Two Numbers.
+// Memory Usage: 39.4 MB, less than 33.63% of Java online submissions for Add Two Numbers.
